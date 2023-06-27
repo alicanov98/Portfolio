@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/scss/index.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!--? ---------------------------- Start Header ----------------------------- -->
+    <header class="header">
+      <div class="container row">
+        <nav>
+          <a class="logo" href="./index.html">MA</a>
+          <ul class="nav-list row">
+            <li class="nav-item"><a href="./index.html">Home</a></li>
+            <li class="nav-item"><a href="#about">About Me</a></li>
+            <li class="nav-item"><a href="#project">Projects</a></li>
+            <li class="nav-item"><a href="#skills">Skills</a></li>
+            <li class="nav-item"><a href="#form">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--* ---------------------------- End Header ----------------------------- -->
+    <!--? ---------------------------- Start Main ----------------------------- -->
+    <main>
+      <section class="home">
+        <div class="container">
+          <div class="row" data-aos="zoom-in">
+              <h1>
+                I'm Malik Alijanov <br />
+                A Front-end Developer
+              </h1>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="about-right" data-aos="fade-up-right">
+              <h2 class="title">About Me</h2>
+              <p>
+                In the mean time shall soon find out the cause of this: What was
+                the <br />epicurus towards their children; each of these can
+                have a chain of <br />not to have been taken in the broad plain
+                in what is the reason why
+              </p>
+              <p class="bottom-content">
+                "What was the epicurus towards their <br />
+                children; each of these can have a chain.
+              </p>
+            </div>
+            <div class="about-left" data-aos="fade-up-left">
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Why did I choose to become a front end developer?
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                    <p>Because I enjoy my job</p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Data 2 <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                    <p>Lorem, ipsum.</p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button class="accordion-header">
+                    Data 3 <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project" id="project">
+        <div class="container">
+          <div class="row">
+            <h2 class="title">Projects</h2>
+            <div class="wrapper" data-aos="fade-up-left">
+              <div class="buttonWrapper">
+                <button
+                  class="tab-button"
+                  style="border-top-left-radius: 10px"
+                  data-id="aroma"
+                >
+                  Aroma
+                </button>
+                <button class="tab-button" data-id="skater">Skater</button>
+                <button class="tab-button" data-id="petvet">Petvet</button>
+                <button class="tab-button" data-id="electro">Electro</button>
+                <button class="tab-button" data-id="builder">Builder</button>
+                <button
+                  class="tab-button"
+                  style="border-top-right-radius: 10px"
+                  data-id="myweb"
+                >
+                  My Web
+                </button>
+              </div>
+              <div class="contentWrapper">
+                <div class="content active" id="aroma">
+                  <img src="./assets/image/Aroma.PNG" alt="aroma" />
+                  <a
+                    href="https://github.com/alicanov98/aroma.com-clone"
+                    target="_blank"
+                    class="btn"
+                    >Go to link</a
+                  >
+                </div>
+                <div class="content" id="skater">
+                  <img src="./assets/image/Skater.PNG" alt="skater" />
+                  <a
+                    href="https://github.com/alicanov98/skater-website"
+                    target="_blank"
+                    class="btn"
+                    >Go to link</a
+                  >
+                </div>
+                <div class="content" id="petvet">
+                  <img src="./assets/image/Petvet.PNG" alt="petvet" />
+                  <a
+                    href="https://github.com/alicanov98/petvet"
+                    target="_blank"
+                    class="btn"
+                    >Go to link</a
+                  >
+                </div>
+                <div class="content" id="electro">
+                  <img src="./assets/image/Electro.PNG" alt="electro" />
+                  <a
+                    href="https://github.com/alicanov98/Electro"
+                    target="_blank"
+                    class="btn"
+                    >Go to link</a
+                  >
+                </div>
+                <div class="content" id="builder">
+                  <img src="./assets/image/Builder.PNG" alt="builder" />
+                  <a
+                    href="https://github.com/alicanov98/Builder"
+                    target="_blank"
+                    class="btn"
+                    >Go to link</a
+                  >
+                </div>
+                <div class="content" id="myweb">
+                  <img src="./assets/image/Myweb.PNG" alt="Myweb" />
+                  <a
+                    href="https://github.com/alicanov98/final-project"
+                    target="_blank"
+                    class="btn"
+                    >Go to link</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills" id="skills">
+        <div class="container row">
+          <h2 class="title">Skills</h2>
+          <div class="swiper mySwiper" data-aos="fade-up-right">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/image/html.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/image/css.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/image/js.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/image/react.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="form" id="form">
+        <div class="container">
+          <h2 class="title">Contact</h2>
+          <form class="form_cont" data-aos="fade-up-left">
+            <div class="row">
+              <div class="inp" >
+                <input
+                  type="text"
+                  placeholder="First name"
+                  id="name"
+                  class="form_control"
+                />
+                <span id="fname" style="color: red"></span>
+              </div>
+              <div class="inp">
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  id="surname"
+                  class="form_control last"
+                />
+                <span id="lname" style="color: red"></span>
+              </div>
+            </div>
+            <input
+              type="text"
+              class="form_control"
+              placeholder="Email"
+              id="email"
+            />
+            <span id="emails" style="color: red"></span>
+            <textarea
+              id="message"
+              placeholder="Message"
+              class="form_control"
+            ></textarea>
+            <span id="messages" style="color: red"></span>
+            <button class="btn_form">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!--* ---------------------------- End HEADER ----------------------------- -->
+    <!--? ---------------------------- START HEADER ----------------------------- -->
+    <footer>
+      <div class="container row">
+        <div class="social">
+          <a href="tel:+994507705055" target="_blank"
+            ><i class="fa-solid fa-phone"></i
+          ></a>
+          <a
+            href="https://mail.google.com/mail/u/2/#search/alicanov1998%40gmail.com"
+            target="_blank"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+          <a href="https://github.com/alicanov98" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/m%C9%99lik-%C9%99licanov-978989270/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/alicanov_98/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+        <span>
+          tel:
+          <a href="tel:+994507705055" target="_blank"> +994 50 770 50 55</a>
+        </span>
+        <p>
+          Copyright © 2023 All rights reserved | This template is made with by
+          Colorlib
+        </p>
+      </div>
+    </footer>
+    <a href="#" class="scrolTopBtn"><i class="fa-solid fa-circle-up"></i></a>
+    <!--* ---------------------------- End Footer ----------------------------- -->
+    <!--! ---------------------------- Swiper script ---------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!--! ----------------------------- Fontawsome ------------------------------ -->
+    <script
+      src="https://kit.fontawesome.com/4679a6cec2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--! --------------------------------- AOS --------------------------------- -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Swal -->
+    <!--! ----------------------------  My Script ----------------------------- -->
+    <script src="./assets/js/main.js"></script>
+    <!--! ----------------------------  My Script ----------------------------- -->
+  </body>
+</html>
