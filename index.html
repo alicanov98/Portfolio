@@ -30,20 +30,23 @@
     <!--* ---------------------------- End Header ----------------------------- -->
     <!--? ---------------------------- Start Main ----------------------------- -->
     <main>
-      <section class="home">
+      <!--* ---------------------------- Start Home Section ----------------------------- -->
+      <section class="home" id="home">
         <div class="container">
           <div class="row" data-aos="zoom-in">
-              <h1>
-                I'm Malik Alijanov <br />
-                A Front-end Developer
-              </h1>
+            <h1>
+              I'm Malik Alijanov <br />
+              A Front-end Developer
+            </h1>
           </div>
         </div>
       </section>
-      <section class="about" id="about">
+      <!--? ---------------------------- End Home Section ----------------------------- -->
+      <!--* ---------------------------- Start About Section----------------------------- -->
+      <section class="about" id="about" data-aos="fade-up-right">
         <div class="container">
           <div class="row">
-            <div class="about-right" data-aos="fade-up-right">
+            <div class="about-right">
               <h2 class="title">About Me</h2>
               <p>
                 In the mean time shall soon find out the cause of this: What was
@@ -55,8 +58,6 @@
                 "What was the epicurus towards their <br />
                 children; each of these can have a chain.
               </p>
-            </div>
-            <div class="about-left" data-aos="fade-up-left">
               <div class="accordion">
                 <div class="accordion-item">
                   <button class="accordion-header">
@@ -87,10 +88,14 @@
                 </div>
               </div>
             </div>
+            <div class="about-left">
+              <img src="./assets/image/hometwo.jpg" alt="" />
+            </div>
           </div>
         </div>
       </section>
-
+      <!--? ---------------------------- End About Section ----------------------------- -->
+      <!--* ---------------------------- Start Project Section ----------------------------- -->
       <section class="project" id="project">
         <div class="container">
           <div class="row">
@@ -176,33 +181,39 @@
           </div>
         </div>
       </section>
+      <!--? ---------------------------- End Project Section ----------------------------- -->
+      <!--* ---------------------------- Start Skills Section ----------------------------- -->
       <section class="skills" id="skills">
-        <div class="container row">
-          <h2 class="title">Skills</h2>
-          <div class="swiper mySwiper" data-aos="fade-up-right">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="./assets/image/html.png" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/image/css.png" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/image/js.png" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/image/react.png" />
+        <div class="container">
+          <div class="row">
+            <h2 class="title">Skills</h2>
+            <div class="swiper mySwiper" data-aos="fade-up-right">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./assets/image/html.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/image/css.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/image/js.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/image/react.png" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <!--? ---------------------------- End Skills Section ----------------------------- -->
+      <!--* ---------------------------- Start Form Section ----------------------------- -->
       <section class="form" id="form">
         <div class="container">
           <h2 class="title">Contact</h2>
           <form class="form_cont" data-aos="fade-up-left">
             <div class="row">
-              <div class="inp" >
+              <div class="inp">
                 <input
                   type="text"
                   placeholder="First name"
@@ -238,9 +249,10 @@
           </form>
         </div>
       </section>
+      <!--? ---------------------------- End Form Section ----------------------------- -->
     </main>
-    <!--* ---------------------------- End HEADER ----------------------------- -->
-    <!--? ---------------------------- START HEADER ----------------------------- -->
+    <!--* ---------------------------- End Main ----------------------------- -->
+    <!--? ---------------------------- START Footer ----------------------------- -->
     <footer>
       <div class="container row">
         <div class="social">
@@ -274,20 +286,25 @@
         </p>
       </div>
     </footer>
-    <a href="#" class="scrolTopBtn"><i class="fa-solid fa-circle-up"></i></a>
+    <a href="#home" class="scrolTopBtn"
+      ><i class="fa-solid fa-circle-up"></i
+    ></a>
     <!--* ---------------------------- End Footer ----------------------------- -->
-    <!--! ---------------------------- Swiper script ---------------------------- -->
+    <!--! ---------------------------- Swiper ---------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!--! ---------------------------- Swiper  ---------------------------- -->
     <!--! ----------------------------- Fontawsome ------------------------------ -->
     <script
       src="https://kit.fontawesome.com/4679a6cec2.js"
       crossorigin="anonymous"
     ></script>
+    <!--! ----------------------------- Fontawsome ------------------------------ -->
     <!--! --------------------------------- AOS --------------------------------- -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Swal -->
+    <!--! --------------------------------- AOS --------------------------------- -->
+    <!--! --------------------------------- Sweetalert --------------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Swal -->
+    <!--! --------------------------------- Sweetalert --------------------------------- -->
     <!--! ----------------------------  My Script ----------------------------- -->
     <script src="./assets/js/main.js"></script>
     <!--! ----------------------------  My Script ----------------------------- -->

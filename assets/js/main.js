@@ -20,14 +20,9 @@ window.addEventListener("scroll", () => {
 });
 
 scrolBtn.addEventListener("click", () => {
-  const scrollStep = window.scrollY / 20;
-  const scrollInterval = setInterval(() => {
-    if (window.scrollY === 0) {
-      clearInterval(scrollInterval);
-    }
-    window.scrollBy(0, -scrollStep);
-  }, 16);
+  window.screenTop(0,0)
 });
+
 //! AOS
 AOS.init();
 
@@ -95,6 +90,9 @@ var swiper = new Swiper(".mySwiper", {
   effect: "cube",
   grabCursor: true,
   loop: true,
+  autoplay: {
+    delay: 1000,
+  },
   cubeEffect: {
     shadow: true,
     slideShadows: true,
@@ -134,6 +132,9 @@ form.addEventListener("submit", (e) => {
   } else if (!nameRegex.test(firstName)) {
     nameErr.innerText = "*only letters are allowed";
     isValid = false;
+  } else if (firstName.length < 2 || firstName.length > 12) {
+    nameErr.innerText = "*only letters are allowed 2";
+    isValid = false;
   }
 
   if (surname.trim() === "") {
@@ -142,10 +143,16 @@ form.addEventListener("submit", (e) => {
   } else if (!surnameRegex.test(surname)) {
     surnameErr.innerText = "*only letters are allowed";
     isValid = false;
+  } else if (surname.length < 2 || surname.length > 12) {
+    surnameErr.innerText = "*only letters are allowed 3";
+    isValid = false;
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
+  if (email.trim() === "") {
+    emailErr.innerText = "*email field cannot be empty";
+    isValid = false;
+  } else if (!emailRegex.test(email)) {
     emailErr.innerText = "*invalid email address";
     isValid = false;
   }
@@ -153,15 +160,18 @@ form.addEventListener("submit", (e) => {
   if (message.trim() === "") {
     messageErr.innerText = "*message field cannot be empty";
     isValid = false;
+  } else if (message.length < 10) {
+    messageErr.innerText = "*only letters are allowed 4";
+    isValid = false;
   }
 
   if (isValid) {
     Swal.fire({
-      position: 'top-center',
-      icon: 'success',
-      title: 'Your message has been sent!',
+      position: "top-center",
+      icon: "success",
+      title: "Your message has been sent!",
       showConfirmButton: false,
-      timer: 2500
+      timer: 2500,
     }).then(() => {
       document.querySelector("#name").value = "";
       document.querySelector("#surname").value = "";
