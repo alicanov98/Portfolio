@@ -1,7 +1,7 @@
 //! Fixed Header
 const mainHeader = document.querySelector(".header");
 window.onscroll = function () {
-  if (window.scrollY > 100) {
+  if (window.scrollY > 170) {
     mainHeader.classList.add("fixedBar");
   } else {
     mainHeader.classList.remove("fixedBar");
@@ -12,7 +12,7 @@ window.onscroll = function () {
 const scrolBtn = document.querySelector(".scrolTopBtn");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
+  if (window.scrollY > 170) {
     scrolBtn.style.display = "block";
   } else {
     scrolBtn.style.display = "none";
@@ -20,7 +20,41 @@ window.addEventListener("scroll", () => {
 });
 
 scrolBtn.addEventListener("click", () => {
-  window.screenTop(0,0)
+  window.screenTop(0, 0);
+});
+
+//! Nav-item active
+const navItems = document.querySelectorAll(".nav");
+navItems.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    navItems.forEach((navItem) => {
+      navItem.parentElement.classList.remove("active");
+      navItem.style = "color: #fff;";
+    });
+    if (item.href === e.target.href) {
+      item.style = "color: var(--color);";
+      item.parentElement.classList.add("active");
+    }
+  });
+});
+
+//! Scroll Section
+
+var links = document.querySelectorAll(".nav");
+
+links.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    var targetSectionId = link.getAttribute("href");
+    var targetSection = document.querySelector(targetSectionId);
+
+    targetSection.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "center",
+    });
+  });
 });
 
 //! AOS
@@ -190,4 +224,21 @@ form.addEventListener("submit", (e) => {
       surnameErr.style.display = "none";
     }
   }
+  const userMessage = {
+    firstName,
+    surname,
+    email,
+    message,
+  };
+  setLocalStorage(userMessage);
 });
+
+//! Local Storage
+const setLocalStorage = (obj) => {
+  localStorage.setItem("message", JSON.stringify(obj));
+};
+
+setTimeout(() => {
+  document.querySelector(".year").innerHTML = new Date().getFullYear()
+  document.querySelector("#page").classList.remove("active");
+}, 3000);

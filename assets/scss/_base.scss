@@ -22,6 +22,13 @@ body {
     text-align: left;
 }
 
+:root {
+    --bgcolor: #1e3266;
+    --color: #088395;
+    --hover: #19A7CE;
+    --active: #05BFDB;
+}
+
 .container {
     width: 100%;
     padding: 0 15px;
@@ -61,7 +68,7 @@ body {
 
 .title {
     font-size: 48px;
-    color: #000;
+    color: var(--color);
     margin-bottom: 22px;
     font-weight: 500;
     line-height: 1.2;
@@ -69,9 +76,9 @@ body {
 
 .form_control {
     height: 47px;
-    background: #f6f6f6;
+    background: #fff;
     border-radius: 0;
-    border: 1px solid #f6f6f6;
+    border: 1px solid var(--color);
     outline: none;
     display: block;
     width: 100%;
@@ -80,7 +87,6 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     margin-top: 20px;
 
     &:nth-child(1) {
@@ -91,7 +97,8 @@ body {
         margin-top: 0;
     }
 
-    &:active {
-        border-color: #96bb7c;
+    &:focus {
+        border: none;
+        border-bottom: 2px solid var(--color);
     }
 }

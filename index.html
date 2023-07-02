@@ -12,17 +12,30 @@
     <title>Portfolio</title>
   </head>
   <body>
+    <!--? -------------------------------START LOADER -------------------------------- -->
+    <div id="page" class="active">
+      <div id="container">
+        <div id="ring"></div>
+        <div id="ring"></div>
+        <div id="ring"></div>
+        <div id="ring"></div>
+        <div id="h3">Loading...</div>
+      </div>
+    </div>
+    <!--* ------------------------------- END LOADER -------------------------------- -->
     <!--? ---------------------------- Start Header ----------------------------- -->
     <header class="header">
       <div class="container row">
         <nav>
           <a class="logo" href="./index.html">MA</a>
           <ul class="nav-list row">
-            <li class="nav-item"><a href="./index.html">Home</a></li>
-            <li class="nav-item"><a href="#about">About Me</a></li>
-            <li class="nav-item"><a href="#project">Projects</a></li>
-            <li class="nav-item"><a href="#skills">Skills</a></li>
-            <li class="nav-item"><a href="#form">Contact</a></li>
+            <li class="nav-item"><a href="#home" class="nav">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav">About Me</a></li>
+            <li class="nav-item">
+              <a href="#project" class="nav">Projects</a>
+            </li>
+            <li class="nav-item"><a href="#skills" class="nav">Skills</a></li>
+            <li class="nav-item"><a href="#form" class="nav">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -89,7 +102,7 @@
               </div>
             </div>
             <div class="about-left">
-              <img src="./assets/image/hometwo.jpg" alt="" />
+              <img src="./assets/image/bgabout.webp" alt="" />
             </div>
           </div>
         </div>
@@ -103,7 +116,7 @@
             <div class="wrapper" data-aos="fade-up-left">
               <div class="buttonWrapper">
                 <button
-                  class="tab-button"
+                  class="tab-button active"
                   style="border-top-left-radius: 10px"
                   data-id="aroma"
                 >
@@ -123,61 +136,64 @@
               </div>
               <div class="contentWrapper">
                 <div class="content active" id="aroma">
-                  <img src="./assets/image/Aroma.PNG" alt="aroma" />
                   <a
                     href="https://github.com/alicanov98/aroma.com-clone"
                     target="_blank"
                     class="btn"
-                    >Go to link</a
+                    >view details</a
                   >
+                  <img src="./assets/image/Aroma.PNG" alt="aroma" />
                 </div>
                 <div class="content" id="skater">
-                  <img src="./assets/image/Skater.PNG" alt="skater" />
                   <a
                     href="https://github.com/alicanov98/skater-website"
                     target="_blank"
                     class="btn"
-                    >Go to link</a
+                    >view details</a
                   >
+                  <img src="./assets/image/Skater.PNG" alt="skater" />
                 </div>
                 <div class="content" id="petvet">
-                  <img src="./assets/image/Petvet.PNG" alt="petvet" />
                   <a
                     href="https://github.com/alicanov98/petvet"
                     target="_blank"
                     class="btn"
-                    >Go to link</a
+                    >view details</a
                   >
+                  <img src="./assets/image/Petvet.PNG" alt="petvet" />
                 </div>
                 <div class="content" id="electro">
-                  <img src="./assets/image/Electro.PNG" alt="electro" />
                   <a
                     href="https://github.com/alicanov98/Electro"
                     target="_blank"
                     class="btn"
-                    >Go to link</a
+                    >view details</a
                   >
+                  <img src="./assets/image/Electro.PNG" alt="electro" />
                 </div>
                 <div class="content" id="builder">
-                  <img src="./assets/image/Builder.PNG" alt="builder" />
                   <a
                     href="https://github.com/alicanov98/Builder"
                     target="_blank"
                     class="btn"
-                    >Go to link</a
+                    >view details</a
                   >
+                  <img src="./assets/image/Builder.PNG" alt="builder" />
                 </div>
                 <div class="content" id="myweb">
-                  <img src="./assets/image/Myweb.PNG" alt="Myweb" />
                   <a
                     href="https://github.com/alicanov98/final-project"
                     target="_blank"
                     class="btn"
-                    >Go to link</a
+                    >view details</a
                   >
+                  <img src="./assets/image/Myweb.PNG" alt="Myweb" />
                 </div>
               </div>
             </div>
+            <!-- <div class="imageSection">
+              <img src="./assets/image/" alt="">
+            </div> -->
           </div>
         </div>
       </section>
@@ -280,10 +296,7 @@
           tel:
           <a href="tel:+994507705055" target="_blank"> +994 50 770 50 55</a>
         </span>
-        <p>
-          Copyright © 2023 All rights reserved | This template is made with by
-          Colorlib
-        </p>
+        <p>All rights reserved | Created by Malik Alijanov ©<span class="year" style="font-size: 16px;"></span></p>
       </div>
     </footer>
     <a href="#home" class="scrolTopBtn"
