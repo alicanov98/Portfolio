@@ -359,7 +359,7 @@ main .about .container .row .about-right .accordion {
   width: 95%;
 }
 main .about .container .row .about-right .accordion .accordion-item {
-  background-color: rgba(167, 199, 143, 0.462745098);
+  background-color: rgba(51, 83, 163, 0.5843137255);
   border-bottom: 1px solid var(--color);
   border-radius: 10px;
   margin: 10px 0;
@@ -399,7 +399,7 @@ main .about .container .row .about-right .accordion .accordion-item .accordion-c
 }
 main .about .container .row .about-right .accordion .accordion-item .accordion-content p {
   padding: 10px;
-  color: black;
+  color: #fff;
 }
 main .about .container .row .about-right .accordion .accordion-item .accordion-content.active {
   max-height: 500px;
