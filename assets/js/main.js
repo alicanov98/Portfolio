@@ -136,72 +136,83 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 //! Form
-const form = document.querySelector(".form_cont");
+const form = document.querySelector("#form");
+const firstname = document.querySelector("#name");
+const surname = document.querySelector("#surname");
+const email = document.querySelector("#email");
+const message = document.querySelector("#message");
 
-const nameErr = document.querySelector("#fname");
-const surnameErr = document.querySelector("#lname");
-const emailErr = document.querySelector("#emails");
-const messageErr = document.querySelector("#messages");
+const nameRegex = /^[A-Za-z]+$/;
+const surnameRegex = /^[A-Za-z]+$/;
+let isValid = false;
+
+firstname.oninput = function () {
+  let nameValue = firstname.value.trim();
+  if (nameValue === "") {
+    firstname.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (!nameRegex.test(nameValue)) {
+    firstname.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (nameValue.length < 3 || nameValue.length > 12) {
+    firstname.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else {
+    firstname.style.borderBottom = "2px solid green";
+  }
+};
+
+surname.oninput = function () {
+  let surnameValue = surname.value.trim();
+  if (surnameValue === "") {
+    surname.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (!nameRegex.test(surnameValue)) {
+    surname.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (surnameValue.length < 3 || surnameValue.length > 12) {
+    surname.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else {
+    surname.style.borderBottom = "2px solid green";
+  }
+};
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+email.oninput = function () {
+  let emailValue = email.value.trim();
+  if (emailValue === "") {
+    email.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (!emailRegex.test(emailValue)) {
+    email.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (emailValue.length < 7 || emailValue.length > 30) {
+    email.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else {
+    email.style.borderBottom = "2px solid green";
+  }
+};
+
+message.oninput = function () {
+  let messageValue = message.value.trim();
+  if (messageValue === "") {
+    message.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else if (messageValue.length < 12) {
+    message.style.borderBottom = "2px solid red";
+    isValid = true;
+  } else {
+    message.style.borderBottom = "2px solid green";
+  }
+};
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  nameErr.innerHTML = "";
-  surnameErr.innerHTML = "";
-  emailErr.innerHTML = "";
-  messageErr.innerHTML = "";
-
-  const firstName = document.querySelector("#name").value;
-  const surname = document.querySelector("#surname").value;
-  const email = document.querySelector("#email").value;
-  const message = document.querySelector("#message").value;
-  let isValid = true;
-
-  const nameRegex = /^[A-Za-z]+$/;
-  const surnameRegex = /^[A-Za-z]+$/;
-
-  if (firstName.trim() === "") {
-    nameErr.innerText = "*name field cannot be empty";
-    isValid = false;
-  } else if (!nameRegex.test(firstName)) {
-    nameErr.innerText = "*only letters are allowed";
-    isValid = false;
-  } else if (firstName.length < 2 || firstName.length > 12) {
-    nameErr.innerText = "*only letters are allowed 2";
-    isValid = false;
-  }
-
-  if (surname.trim() === "") {
-    surnameErr.innerText = "*last name field cannot be empty";
-    isValid = false;
-  } else if (!surnameRegex.test(surname)) {
-    surnameErr.innerText = "*only letters are allowed";
-    isValid = false;
-  } else if (surname.length < 2 || surname.length > 12) {
-    surnameErr.innerText = "*only letters are allowed 3";
-    isValid = false;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (email.trim() === "") {
-    emailErr.innerText = "*email field cannot be empty";
-    isValid = false;
-  } else if (!emailRegex.test(email)) {
-    emailErr.innerText = "*invalid email address";
-    isValid = false;
-  }
-
-  if (message.trim() === "") {
-    messageErr.innerText = "*message field cannot be empty";
-    isValid = false;
-  } else if (message.length < 10) {
-    messageErr.innerText = "*only letters are allowed 4";
-    isValid = false;
-  }
-
   if (isValid) {
     Swal.fire({
-      position: "top-center",
+      position: "center",
       icon: "success",
       title: "Your message has been sent!",
       showConfirmButton: false,
@@ -212,33 +223,24 @@ form.addEventListener("submit", (e) => {
       document.querySelector("#email").value = "";
       document.querySelector("#message").value = "";
     });
-  } else {
-    if (nameErr.innerText !== "") {
-      nameErr.style.display = "block";
-    } else {
-      nameErr.style.display = "none";
-    }
-    if (surnameErr.innerText !== "") {
-      surnameErr.style.display = "block";
-    } else {
-      surnameErr.style.display = "none";
-    }
+    localStorage.setItem(
+      "message",
+      JSON.stringify({
+        firstName: firstname.value,
+        surname: surname.value,
+        email: email.value,
+        message: message.value,
+      })
+    );
+  } else if (!isValid) {
+    firstname.style.borderBottom = "2px solid red";
+    surname.style.borderBottom = "2px solid red";
+    email.style.borderBottom = "2px solid red";
+    message.style.borderBottom = "2px solid red";
   }
-  const userMessage = {
-    firstName,
-    surname,
-    email,
-    message,
-  };
-  setLocalStorage(userMessage);
 });
 
-//! Local Storage
-const setLocalStorage = (obj) => {
-  localStorage.setItem("message", JSON.stringify(obj));
-};
-
 setTimeout(() => {
-  document.querySelector(".year").innerHTML = new Date().getFullYear()
+  document.querySelector(".year").innerHTML = new Date().getFullYear();
   document.querySelector("#page").classList.remove("active");
 }, 3000);
