@@ -144,21 +144,25 @@ const message = document.querySelector("#message");
 
 const nameRegex = /^[A-Za-z]+$/;
 const surnameRegex = /^[A-Za-z]+$/;
-let isValid = false;
+let isValidFirstName = false;
+let isValidSurname = false;
+let isValidEmail = false;
+let isValidMessage = false;
 
 firstname.oninput = function () {
   let nameValue = firstname.value.trim();
   if (nameValue === "") {
     firstname.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidFirstName = false;
   } else if (!nameRegex.test(nameValue)) {
     firstname.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidFirstName = false;
   } else if (nameValue.length < 3 || nameValue.length > 12) {
     firstname.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidFirstName = false;
   } else {
     firstname.style.borderBottom = "2px solid green";
+    isValidFirstName = true;
   }
 };
 
@@ -166,15 +170,16 @@ surname.oninput = function () {
   let surnameValue = surname.value.trim();
   if (surnameValue === "") {
     surname.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidSurname = false;
   } else if (!nameRegex.test(surnameValue)) {
     surname.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidSurname = false;
   } else if (surnameValue.length < 3 || surnameValue.length > 12) {
     surname.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidSurname = false;
   } else {
     surname.style.borderBottom = "2px solid green";
+    isValidSurname = true;
   }
 };
 
@@ -183,15 +188,16 @@ email.oninput = function () {
   let emailValue = email.value.trim();
   if (emailValue === "") {
     email.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidEmail = false;
   } else if (!emailRegex.test(emailValue)) {
     email.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidEmail = false;
   } else if (emailValue.length < 7 || emailValue.length > 30) {
     email.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidEmail = false;
   } else {
     email.style.borderBottom = "2px solid green";
+    isValidEmail = true;
   }
 };
 
@@ -199,18 +205,19 @@ message.oninput = function () {
   let messageValue = message.value.trim();
   if (messageValue === "") {
     message.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidMessage = false;
   } else if (messageValue.length < 12) {
     message.style.borderBottom = "2px solid red";
-    isValid = true;
+    isValidMessage = false;
   } else {
     message.style.borderBottom = "2px solid green";
+    isValidMessage = true;
   }
 };
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (isValid) {
+  if (isValidFirstName && isValidSurname && isValidEmail && isValidMessage) {
     Swal.fire({
       position: "center",
       icon: "success",
@@ -222,6 +229,14 @@ form.addEventListener("submit", (e) => {
       document.querySelector("#surname").value = "";
       document.querySelector("#email").value = "";
       document.querySelector("#message").value = "";
+      isValidFirstName = false;
+      isValidSurname = false;
+      isValidEmail = false;
+      isValidMessage = false;
+      firstname.style.border = "1px solid #088395";
+      surname.style.border = "1px solid #088395";
+      email.style.border = "1px solid #088395";
+      message.style.border = "1px solid #088395";
     });
     localStorage.setItem(
       "message",
@@ -232,16 +247,23 @@ form.addEventListener("submit", (e) => {
         message: message.value,
       })
     );
-  } else if (!isValid) {
-    firstname.style.borderBottom = "2px solid red";
-    surname.style.borderBottom = "2px solid red";
-    email.style.borderBottom = "2px solid red";
-    message.style.borderBottom = "2px solid red";
+  } else {
+    firstname.style.borderBottom = isValidFirstName
+      ? "2px solid green"
+      : "2px solid red";
+    surname.style.borderBottom = isValidSurname
+      ? "2px solid green"
+      : "2px solid red";
+    email.style.borderBottom = isValidEmail
+      ? "2px solid green"
+      : "2px solid red";
+    message.style.borderBottom = isValidMessage
+      ? "2px solid green"
+      : "2px solid red";
   }
-  isValid = false;
 });
 
 setTimeout(() => {
   document.querySelector(".year").innerHTML = new Date().getFullYear();
   document.querySelector("#page").classList.remove("active");
-}, 3000);
+}, 2000);
