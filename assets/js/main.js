@@ -238,6 +238,7 @@ form.addEventListener("submit", (e) => {
     email.style.borderBottom = "2px solid red";
     message.style.borderBottom = "2px solid red";
   }
+  isValid = false;
 });
 
 setTimeout(() => {
